@@ -12,12 +12,21 @@
 		8C86D3B429672A9800121DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3B329672A9800121DB0 /* AppDelegate.swift */; };
 		8C86D3B629672A9800121DB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3B529672A9800121DB0 /* SceneDelegate.swift */; };
 		8C86D3B829672A9800121DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3B729672A9800121DB0 /* ViewController.swift */; };
-		8C86D3BB29672A9800121DB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D3B929672A9800121DB0 /* Main.storyboard */; };
 		8C86D3BD29672A9900121DB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D3BC29672A9900121DB0 /* Assets.xcassets */; };
 		8C86D3C029672A9900121DB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D3BE29672A9900121DB0 /* LaunchScreen.storyboard */; };
 		8C86D3CB29672A9900121DB0 /* IonixTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3CA29672A9900121DB0 /* IonixTestTests.swift */; };
 		8C86D3D529672A9A00121DB0 /* IonixTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3D429672A9A00121DB0 /* IonixTestUITests.swift */; };
 		8C86D3D729672A9A00121DB0 /* IonixTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3D629672A9A00121DB0 /* IonixTestUITestsLaunchTests.swift */; };
+		8C86D3F329673C6300121DB0 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3F229673C6300121DB0 /* UIButton+extension.swift */; };
+		8C86D3F729673EFE00121DB0 /* PermissionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3F529673EFE00121DB0 /* PermissionCollectionViewCell.swift */; };
+		8C86D3F829673EFE00121DB0 /* PermissionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D3F629673EFE00121DB0 /* PermissionCollectionViewCell.xib */; };
+		8C86D3FB2967453100121DB0 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3FA2967453100121DB0 /* Permission.swift */; };
+		8C86D40329676EBA00121DB0 /* PermissionsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3FE29676EBA00121DB0 /* PermissionsContract.swift */; };
+		8C86D40429676EBA00121DB0 /* PermissionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3FF29676EBA00121DB0 /* PermissionsPresenter.swift */; };
+		8C86D40529676EBA00121DB0 /* PermissionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D40029676EBA00121DB0 /* PermissionsRouter.swift */; };
+		8C86D40629676EBA00121DB0 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D40129676EBA00121DB0 /* PermissionsViewController.swift */; };
+		8C86D40729676EBA00121DB0 /* PermissionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D40229676EBA00121DB0 /* PermissionsInteractor.swift */; };
+		8C86D40929676ED300121DB0 /* PermissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D40829676ED300121DB0 /* PermissionsViewController.xib */; };
 		A953508163DA97FB8CA9BD60 /* Pods_IonixTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2222A1C0229A9DB4028E167 /* Pods_IonixTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +57,6 @@
 		8C86D3B329672A9800121DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C86D3B529672A9800121DB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C86D3B729672A9800121DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8C86D3BA29672A9800121DB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C86D3BC29672A9900121DB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C86D3BF29672A9900121DB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C86D3C129672A9900121DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +65,16 @@
 		8C86D3D029672A9A00121DB0 /* IonixTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IonixTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C86D3D429672A9A00121DB0 /* IonixTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IonixTestUITests.swift; sourceTree = "<group>"; };
 		8C86D3D629672A9A00121DB0 /* IonixTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IonixTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C86D3F229673C6300121DB0 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		8C86D3F529673EFE00121DB0 /* PermissionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionCollectionViewCell.swift; sourceTree = "<group>"; };
+		8C86D3F629673EFE00121DB0 /* PermissionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PermissionCollectionViewCell.xib; sourceTree = "<group>"; };
+		8C86D3FA2967453100121DB0 /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
+		8C86D3FE29676EBA00121DB0 /* PermissionsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsContract.swift; sourceTree = "<group>"; };
+		8C86D3FF29676EBA00121DB0 /* PermissionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsPresenter.swift; sourceTree = "<group>"; };
+		8C86D40029676EBA00121DB0 /* PermissionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsRouter.swift; sourceTree = "<group>"; };
+		8C86D40129676EBA00121DB0 /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
+		8C86D40229676EBA00121DB0 /* PermissionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsInteractor.swift; sourceTree = "<group>"; };
+		8C86D40829676ED300121DB0 /* PermissionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PermissionsViewController.xib; sourceTree = "<group>"; };
 		B2222A1C0229A9DB4028E167 /* Pods_IonixTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IonixTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A381D28EE4B38240B89861 /* Pods_IonixTest_IonixTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IonixTest_IonixTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC8F9D572DDF6996910EFB9 /* Pods-IonixTest-IonixTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IonixTest-IonixTestUITests.release.xcconfig"; path = "Target Support Files/Pods-IonixTest-IonixTestUITests/Pods-IonixTest-IonixTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,10 +144,13 @@
 		8C86D3B229672A9800121DB0 /* IonixTest */ = {
 			isa = PBXGroup;
 			children = (
+				8C86D3F9296743F200121DB0 /* Models */,
+				8C86D3F429673ED700121DB0 /* Cells */,
+				8C86D3F129673C4800121DB0 /* Extensions */,
+				8C86D3E329673B2A00121DB0 /* Modules */,
 				8C86D3B329672A9800121DB0 /* AppDelegate.swift */,
 				8C86D3B529672A9800121DB0 /* SceneDelegate.swift */,
 				8C86D3B729672A9800121DB0 /* ViewController.swift */,
-				8C86D3B929672A9800121DB0 /* Main.storyboard */,
 				8C86D3BC29672A9900121DB0 /* Assets.xcassets */,
 				8C86D3BE29672A9900121DB0 /* LaunchScreen.storyboard */,
 				8C86D3C129672A9900121DB0 /* Info.plist */,
@@ -154,6 +175,52 @@
 			path = IonixTestUITests;
 			sourceTree = "<group>";
 		};
+		8C86D3E329673B2A00121DB0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8C86D3FD29676EA900121DB0 /* Permissions */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8C86D3F129673C4800121DB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C86D3F229673C6300121DB0 /* UIButton+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C86D3F429673ED700121DB0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8C86D3F529673EFE00121DB0 /* PermissionCollectionViewCell.swift */,
+				8C86D3F629673EFE00121DB0 /* PermissionCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8C86D3F9296743F200121DB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8C86D3FA2967453100121DB0 /* Permission.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8C86D3FD29676EA900121DB0 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				8C86D3FE29676EBA00121DB0 /* PermissionsContract.swift */,
+				8C86D40229676EBA00121DB0 /* PermissionsInteractor.swift */,
+				8C86D3FF29676EBA00121DB0 /* PermissionsPresenter.swift */,
+				8C86D40029676EBA00121DB0 /* PermissionsRouter.swift */,
+				8C86D40129676EBA00121DB0 /* PermissionsViewController.swift */,
+				8C86D40829676ED300121DB0 /* PermissionsViewController.xib */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
 		AE7FF648A65CCAB0A56A2DD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +231,6 @@
 				C627221D82595BFAAC709908 /* Pods-IonixTestTests.debug.xcconfig */,
 				70F344B5CAC0FCB289B01D57 /* Pods-IonixTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -278,8 +344,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C86D3C029672A9900121DB0 /* LaunchScreen.storyboard in Resources */,
+				8C86D40929676ED300121DB0 /* PermissionsViewController.xib in Resources */,
+				8C86D3F829673EFE00121DB0 /* PermissionCollectionViewCell.xib in Resources */,
 				8C86D3BD29672A9900121DB0 /* Assets.xcassets in Resources */,
-				8C86D3BB29672A9800121DB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,8 +475,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C86D3B829672A9800121DB0 /* ViewController.swift in Sources */,
+				8C86D40429676EBA00121DB0 /* PermissionsPresenter.swift in Sources */,
+				8C86D40329676EBA00121DB0 /* PermissionsContract.swift in Sources */,
+				8C86D3F729673EFE00121DB0 /* PermissionCollectionViewCell.swift in Sources */,
 				8C86D3B429672A9800121DB0 /* AppDelegate.swift in Sources */,
+				8C86D40629676EBA00121DB0 /* PermissionsViewController.swift in Sources */,
+				8C86D40529676EBA00121DB0 /* PermissionsRouter.swift in Sources */,
+				8C86D40729676EBA00121DB0 /* PermissionsInteractor.swift in Sources */,
 				8C86D3B629672A9800121DB0 /* SceneDelegate.swift in Sources */,
+				8C86D3F329673C6300121DB0 /* UIButton+extension.swift in Sources */,
+				8C86D3FB2967453100121DB0 /* Permission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,14 +521,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8C86D3B929672A9800121DB0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C86D3BA29672A9800121DB0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8C86D3BE29672A9900121DB0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -592,9 +659,8 @@
 				INFOPLIST_FILE = IonixTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,9 +687,8 @@
 				INFOPLIST_FILE = IonixTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
