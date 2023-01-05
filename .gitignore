@@ -30,3 +30,4 @@ Pods/
 sonar-reports/
 compile_commands.json
 xcodebuild.log
+*.xcuserstate
