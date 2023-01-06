@@ -36,6 +36,11 @@
 		8C86D41B2967B26500121DB0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D4192967B26500121DB0 /* HomeTableViewCell.swift */; };
 		8C86D41C2967B26500121DB0 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D41A2967B26500121DB0 /* HomeTableViewCell.xib */; };
 		8C86D4282967B77E00121DB0 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D4272967B77E00121DB0 /* Meme.swift */; };
+		8C86D42B296861D800121DB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D42A296861D800121DB0 /* NetworkManager.swift */; };
+		8C86D42D29687D6800121DB0 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D42C29687D6800121DB0 /* APIRequest.swift */; };
+		8C86D42F29687D8000121DB0 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D42E29687D8000121DB0 /* APIProtocol.swift */; };
+		8C86D43129687D9400121DB0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D43029687D9400121DB0 /* Endpoints.swift */; };
+		8C86D4332968AEB100121DB0 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D4322968AEB100121DB0 /* UIView+extension.swift */; };
 		A953508163DA97FB8CA9BD60 /* Pods_IonixTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2222A1C0229A9DB4028E167 /* Pods_IonixTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +98,11 @@
 		8C86D4192967B26500121DB0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		8C86D41A2967B26500121DB0 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		8C86D4272967B77E00121DB0 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		8C86D42A296861D800121DB0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8C86D42C29687D6800121DB0 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		8C86D42E29687D8000121DB0 /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
+		8C86D43029687D9400121DB0 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		8C86D4322968AEB100121DB0 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		B2222A1C0229A9DB4028E167 /* Pods_IonixTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IonixTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A381D28EE4B38240B89861 /* Pods_IonixTest_IonixTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IonixTest_IonixTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC8F9D572DDF6996910EFB9 /* Pods-IonixTest-IonixTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IonixTest-IonixTestUITests.release.xcconfig"; path = "Target Support Files/Pods-IonixTest-IonixTestUITests/Pods-IonixTest-IonixTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +172,7 @@
 		8C86D3B229672A9800121DB0 /* IonixTest */ = {
 			isa = PBXGroup;
 			children = (
+				8C86D429296861C100121DB0 /* Network */,
 				8C86D3F9296743F200121DB0 /* Models */,
 				8C86D3F429673ED700121DB0 /* Cells */,
 				8C86D3F129673C4800121DB0 /* Extensions */,
@@ -206,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				8C86D3F229673C6300121DB0 /* UIButton+extension.swift */,
+				8C86D4322968AEB100121DB0 /* UIView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +282,17 @@
 				8C86D41A2967B26500121DB0 /* HomeTableViewCell.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8C86D429296861C100121DB0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8C86D42A296861D800121DB0 /* NetworkManager.swift */,
+				8C86D42C29687D6800121DB0 /* APIRequest.swift */,
+				8C86D42E29687D8000121DB0 /* APIProtocol.swift */,
+				8C86D43029687D9400121DB0 /* Endpoints.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		AE7FF648A65CCAB0A56A2DD9 /* Pods */ = {
@@ -527,6 +550,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C86D42B296861D800121DB0 /* NetworkManager.swift in Sources */,
+				8C86D42F29687D8000121DB0 /* APIProtocol.swift in Sources */,
+				8C86D4332968AEB100121DB0 /* UIView+extension.swift in Sources */,
 				8C86D4102967AC0200121DB0 /* HomeContract.swift in Sources */,
 				8C86D3B829672A9800121DB0 /* ViewController.swift in Sources */,
 				8C86D40429676EBA00121DB0 /* PermissionsPresenter.swift in Sources */,
@@ -535,6 +561,7 @@
 				8C86D3F729673EFE00121DB0 /* PermissionCollectionViewCell.swift in Sources */,
 				8C86D4132967AC0200121DB0 /* HomeViewController.swift in Sources */,
 				8C86D3B429672A9800121DB0 /* AppDelegate.swift in Sources */,
+				8C86D43129687D9400121DB0 /* Endpoints.swift in Sources */,
 				8C86D40629676EBA00121DB0 /* PermissionsViewController.swift in Sources */,
 				8C86D40529676EBA00121DB0 /* PermissionsRouter.swift in Sources */,
 				8C86D40729676EBA00121DB0 /* PermissionsInteractor.swift in Sources */,
@@ -544,6 +571,7 @@
 				8C86D3F329673C6300121DB0 /* UIButton+extension.swift in Sources */,
 				8C86D4282967B77E00121DB0 /* Meme.swift in Sources */,
 				8C86D41B2967B26500121DB0 /* HomeTableViewCell.swift in Sources */,
+				8C86D42D29687D6800121DB0 /* APIRequest.swift in Sources */,
 				8C86D3FB2967453100121DB0 /* Permission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

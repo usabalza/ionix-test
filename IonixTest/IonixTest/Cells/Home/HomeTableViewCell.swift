@@ -12,6 +12,8 @@ class HomeTableViewCell: UITableViewCell {
     
     static let identifier = "HomeTableViewCell"
     
+    @IBOutlet weak var containerView: UIView!
+    
     @IBOutlet weak var memeImage: UIImageView!
     
     @IBOutlet weak var memeTitle: UILabel!
@@ -23,6 +25,8 @@ class HomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setupCellView()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,6 +41,13 @@ class HomeTableViewCell: UITableViewCell {
         memeTitle.text = model.title
         memeVotes.text = "\(model.score)"
         memeComments.text = "\(model.numComments)"
+    }
+    
+    func setupCellView() {
+        containerView.layer.cornerRadius = 16
+        memeImage.layer.cornerRadius = 16
+        containerView.clipsToBounds = false
+        containerView.addShadow(color: UIColor.black, opacity: 0.4, offset: CGSize(width: 0, height: 4), radius: 8)
     }
     
 }

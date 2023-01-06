@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTableView()
+        guard let presenter = presenter else { return }
+        presenter.loadData()
     }
     
     func loadTableView() {
@@ -33,6 +35,9 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: PresenterToViewHomeProtocol{
     // TODO: Implement View Output Methods
+    func reloadTable() {
+        homeTableView.reloadData()
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -44,7 +49,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let presenter = presenter else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as! HomeTableViewCell
-        cell.setup(model: presenter.getMemeIn(row: indexPath.row))
+        cell.setup(model: presenter.getMemeIn(row: indexPath.row).data)
         return cell
     }
     

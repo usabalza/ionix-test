@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewHomeProtocol {
-   
+   func reloadTable()
 }
 
 
@@ -22,8 +22,9 @@ protocol ViewToPresenterHomeProtocol {
     var interactor: PresenterToInteractorHomeProtocol? { get set }
     var router: PresenterToRouterHomeProtocol? { get set }
     
+    func loadData()
     func getMemeCount() -> Int
-    func getMemeIn(row: Int) -> Meme
+    func getMemeIn(row: Int) -> BaseMeme
 }
 
 
@@ -31,12 +32,14 @@ protocol ViewToPresenterHomeProtocol {
 protocol PresenterToInteractorHomeProtocol {
     
     var presenter: InteractorToPresenterHomeProtocol? { get set }
+    func getMemeIn()
 }
 
 
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterHomeProtocol {
-    
+    func fetchMemeArray(model: [BaseMeme])
+    func showAlert(error: String)
 }
 
 

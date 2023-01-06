@@ -10,54 +10,57 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="IonixTest" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="IonixTest" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUW-ZN-EDg">
                         <rect key="frame" x="12" y="12" width="296" height="296"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yah-0g-xsZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yah-0g-xsZ">
                                 <rect key="frame" x="0.0" y="0.0" width="296" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="wTr-bX-8aj"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-BY-PTc">
-                                <rect key="frame" x="42" y="182" width="242" height="66"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-BY-PTc">
+                                <rect key="frame" x="66" y="182" width="218" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="neR-vu-Hda"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="QvN-8t-htT">
-                                <rect key="frame" x="6" y="182" width="24" height="72"/>
+                                <rect key="frame" x="6" y="182" width="48" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlW-cL-HW4">
-                                        <rect key="frame" x="0.0" y="0.0" width="24" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="22"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="" image="chevron.up" catalog="system"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ig-Ur-r9Y">
-                                        <rect key="frame" x="0.0" y="25" width="24" height="22"/>
+                                        <rect key="frame" x="0.0" y="25" width="48" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXV-1J-9Qz">
-                                        <rect key="frame" x="0.0" y="50" width="24" height="22"/>
+                                        <rect key="frame" x="0.0" y="50" width="48" height="22"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="" image="chevron.down" catalog="system"/>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="6kQ-X8-LAB"/>
+                                    <constraint firstAttribute="width" constant="48" id="6kQ-X8-LAB"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="96z-cR-IFm">
-                                <rect key="frame" x="36" y="260" width="60.333333333333343" height="24"/>
+                                <rect key="frame" x="64" y="260" width="60.333333333333343" height="24"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Oos-Ms-jh2">
                                         <rect key="frame" x="0.0" y="1.3333333333333339" width="24" height="23"/>
@@ -84,7 +87,7 @@
                             <constraint firstItem="yah-0g-xsZ" firstAttribute="leading" secondItem="JUW-ZN-EDg" secondAttribute="leading" id="QdW-7I-zbT"/>
                             <constraint firstItem="96z-cR-IFm" firstAttribute="top" secondItem="h7V-BY-PTc" secondAttribute="bottom" constant="12" id="dPA-wv-7zX"/>
                             <constraint firstAttribute="bottom" secondItem="96z-cR-IFm" secondAttribute="bottom" constant="12" id="gXi-KT-R7r"/>
-                            <constraint firstItem="96z-cR-IFm" firstAttribute="leading" secondItem="JUW-ZN-EDg" secondAttribute="leading" constant="36" id="hUf-Fl-zhM"/>
+                            <constraint firstItem="96z-cR-IFm" firstAttribute="leading" secondItem="JUW-ZN-EDg" secondAttribute="leading" constant="64" id="hUf-Fl-zhM"/>
                             <constraint firstItem="QvN-8t-htT" firstAttribute="leading" secondItem="JUW-ZN-EDg" secondAttribute="leading" constant="6" id="rkS-z0-i9h"/>
                             <constraint firstItem="yah-0g-xsZ" firstAttribute="top" secondItem="JUW-ZN-EDg" secondAttribute="top" id="t1A-da-t68"/>
                             <constraint firstItem="h7V-BY-PTc" firstAttribute="leading" secondItem="QvN-8t-htT" secondAttribute="trailing" constant="12" id="umT-ud-Oyt"/>
@@ -100,6 +103,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="containerView" destination="JUW-ZN-EDg" id="j04-bw-bp5"/>
                 <outlet property="memeComments" destination="DA7-L9-D0e" id="CbF-O4-Vgj"/>
                 <outlet property="memeImage" destination="yah-0g-xsZ" id="F7k-tE-0dq"/>
                 <outlet property="memeTitle" destination="h7V-BY-PTc" id="ra6-DM-EL8"/>
