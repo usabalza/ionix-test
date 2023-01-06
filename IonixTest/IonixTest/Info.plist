@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>We need authorization to send push notifications to your phone.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need authorization to access to your location when the app is in use.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need authorization to access to your location.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need authorization to access to your camera.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

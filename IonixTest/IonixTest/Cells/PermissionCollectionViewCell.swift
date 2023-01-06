@@ -25,11 +25,11 @@ class PermissionCollectionViewCell: UICollectionViewCell {
     var secondaryColor: UIColor = UIColor.init(named: "secondary")!
     var tertiaryColor: UIColor = UIColor.init(named: "tertiary")!
     
+    var allowFunction: ((Int) -> ())? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
     }
     
     override func layoutSubviews() {
@@ -55,5 +55,14 @@ class PermissionCollectionViewCell: UICollectionViewCell {
         permissionAllowButton.setTitle(model.allowTitle, for: .normal)
         permissionDenyButton.setTitle(model.denyTitle, for: .normal)
     }
-
+    
+    
+    @IBAction func allowAction(_ sender: UIButton) {
+        allowFunction?(self.tag)
+    }
+    
+    @IBAction func denyAction(_ sender: UIButton) {
+    }
+    
+    
 }

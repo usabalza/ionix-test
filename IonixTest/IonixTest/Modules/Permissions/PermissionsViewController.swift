@@ -23,7 +23,7 @@ class PermissionsViewController: UIViewController {
         permissionsCollection.delegate = self
         permissionsCollection.dataSource = self
     }
-
+    
     // MARK: - Properties
     var presenter: ViewToPresenterPermissionsProtocol?
     
@@ -31,6 +31,19 @@ class PermissionsViewController: UIViewController {
 
 extension PermissionsViewController: PresenterToViewPermissionsProtocol{
     // TODO: Implement View Output Methods
+    func scrollForward() {
+        guard let presenter = presenter else { return }
+        DispatchQueue.main.async {
+            let visibleItems: NSArray = self.permissionsCollection.indexPathsForVisibleItems as NSArray
+            let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
+            let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
+            if nextItem.row < presenter.getPermissionCount() {
+                self.permissionsCollection.scrollToItem(at: nextItem, at: .left, animated: true)
+                
+            }
+        }
+        
+    }
 }
 
 extension PermissionsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -46,7 +59,9 @@ extension PermissionsViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let presenter = presenter else { return UICollectionViewCell() }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PermissionCollectionViewCell.identifier, for: indexPath) as! PermissionCollectionViewCell
+        cell.tag = indexPath.row
         cell.setup(model: presenter.getPermissionIn(row: indexPath.row))
+        cell.allowFunction = presenter.askForPermission
         return cell
     }
     

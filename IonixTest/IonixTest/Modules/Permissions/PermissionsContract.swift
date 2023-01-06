@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewPermissionsProtocol {
-   
+    func scrollForward()
 }
 
 
@@ -24,6 +24,7 @@ protocol ViewToPresenterPermissionsProtocol {
     
     func getPermissionCount() -> Int
     func getPermissionIn(row: Int) -> Permission
+    func askForPermission(row: Int)
 }
 
 
