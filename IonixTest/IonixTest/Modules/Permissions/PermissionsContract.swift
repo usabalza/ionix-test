@@ -12,6 +12,7 @@ import Foundation
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewPermissionsProtocol {
     func scrollForward()
+    func goToHome()
 }
 
 

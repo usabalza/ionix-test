@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PermissionsViewController: UIViewController {
     
@@ -42,7 +43,12 @@ extension PermissionsViewController: PresenterToViewPermissionsProtocol{
                 
             }
         }
-        
+    }
+    
+    func goToHome() {
+        let homeVC  = HomeRouter.createModule()
+        let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        sceneDelegate.switchRootViewController(rootViewController: homeVC, animated: true, completion: nil)
     }
 }
 

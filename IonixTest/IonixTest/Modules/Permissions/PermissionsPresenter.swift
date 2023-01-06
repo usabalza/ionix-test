@@ -78,9 +78,17 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
     func locationPermission() {
         let locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
+        let status = locationManager.authorizationStatus
+        switch status {
+        case .authorizedWhenInUse, .authorizedAlways:
+            view?.goToHome()
+        default: break
+        }
     }
 }
 
 extension PermissionsPresenter: InteractorToPresenterPermissionsProtocol {
     
 }
+
+
