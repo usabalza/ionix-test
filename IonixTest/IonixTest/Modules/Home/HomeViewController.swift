@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeTableView: UITableView!
     
+    let refreshControl = UIRefreshControl()
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,19 @@ class HomeViewController: UIViewController {
         homeTableView.register(UINib.init(nibName: HomeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.identifier)
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        addPushToRefresh()
+    }
+    
+    func addPushToRefresh() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        homeTableView.addSubview(refreshControl)
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+       // Code to refresh table view
+        guard let presenter = presenter else { return }
+        presenter.loadData()
     }
 
     // MARK: - Properties
@@ -37,6 +52,7 @@ extension HomeViewController: PresenterToViewHomeProtocol{
     // TODO: Implement View Output Methods
     func reloadTable() {
         homeTableView.reloadData()
+        refreshControl.endRefreshing()
     }
 }
 
