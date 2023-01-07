@@ -12,7 +12,7 @@ import UIKit
 class PermissionsRouter: PresenterToRouterPermissionsProtocol {
     
     // MARK: Static methods
-    static func createModule() -> UIViewController {
+    static func createModule(isPushed: Bool) -> UIViewController {
         
         let viewController = PermissionsViewController()
         
@@ -23,6 +23,7 @@ class PermissionsRouter: PresenterToRouterPermissionsProtocol {
         viewController.presenter?.view = viewController
         viewController.presenter?.interactor = PermissionsInteractor()
         viewController.presenter?.interactor?.presenter = presenter
+        viewController.isPushed = isPushed
         
         return viewController
     }

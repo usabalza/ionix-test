@@ -44,6 +44,14 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
         }
     }
     
+    func denyAndContinue(row: Int) {
+        if row == 2 {
+            view?.goToHome()
+        } else {
+            view?.scrollForward()
+        }
+    }
+    
     func cameraPermission() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized: // The user has previously granted access to the camera.
@@ -55,7 +63,7 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
                     self.view?.scrollForward()
                 }
             }
-        case .denied, .restricted: // The user has previously denied access.
+        case .denied, .restricted: // The user has previously denied or restricted access.
             return
         @unknown default:
             return
@@ -81,6 +89,7 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
         let status = locationManager.authorizationStatus
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
+            // If the user granted authorization.
             view?.goToHome()
         default: break
         }

@@ -26,6 +26,7 @@ protocol ViewToPresenterPermissionsProtocol {
     func getPermissionCount() -> Int
     func getPermissionIn(row: Int) -> Permission
     func askForPermission(row: Int)
+    func denyAndContinue(row: Int)
 }
 
 

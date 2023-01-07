@@ -23,6 +23,10 @@ class HomeViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Config",
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(goToConfig))
         loadTableView()
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         guard let presenter = presenter else { return }
@@ -52,6 +56,12 @@ class HomeViewController: UIViewController {
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let presenter = presenter else { return }
         presenter.searchText(text: textField.text ?? "")
+    }
+    
+    @objc func goToConfig() {
+        let vc = PermissionsRouter.createModule(isPushed: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 
     // MARK: - Properties

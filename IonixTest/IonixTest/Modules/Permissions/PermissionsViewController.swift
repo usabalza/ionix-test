@@ -13,6 +13,8 @@ class PermissionsViewController: UIViewController {
     
     @IBOutlet weak var permissionsCollection: UICollectionView!
     
+    var isPushed: Bool = false
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +42,18 @@ extension PermissionsViewController: PresenterToViewPermissionsProtocol{
             let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
             if nextItem.row < presenter.getPermissionCount() {
                 self.permissionsCollection.scrollToItem(at: nextItem, at: .left, animated: true)
-                
             }
         }
     }
     
     func goToHome() {
-        let homeVC  = HomeRouter.createModule()
-        let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
-        sceneDelegate.switchRootViewController(rootViewController: homeVC, animated: true, completion: nil)
+        if isPushed {
+            navigationController?.popViewController(animated: true)
+        } else {
+            let homeVC  = UINavigationController(rootViewController: HomeRouter.createModule())
+            let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+            sceneDelegate.switchRootViewController(rootViewController: homeVC, animated: true, completion: nil)
+        }
     }
 }
 
@@ -68,6 +73,7 @@ extension PermissionsViewController: UICollectionViewDelegate, UICollectionViewD
         cell.tag = indexPath.row
         cell.setup(model: presenter.getPermissionIn(row: indexPath.row))
         cell.allowFunction = presenter.askForPermission
+        cell.denyFunction = presenter.denyAndContinue
         return cell
     }
     

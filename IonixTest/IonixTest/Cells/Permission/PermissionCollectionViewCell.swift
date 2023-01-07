@@ -26,6 +26,7 @@ class PermissionCollectionViewCell: UICollectionViewCell {
     var tertiaryColor: UIColor = UIColor.init(named: "tertiary")!
     
     var allowFunction: ((Int) -> ())? = nil
+    var denyFunction: ((Int) -> ())? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,6 +63,7 @@ class PermissionCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func denyAction(_ sender: UIButton) {
+        denyFunction?(self.tag)
     }
     
     
