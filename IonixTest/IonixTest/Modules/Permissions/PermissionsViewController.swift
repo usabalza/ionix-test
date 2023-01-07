@@ -55,6 +55,10 @@ extension PermissionsViewController: PresenterToViewPermissionsProtocol{
             sceneDelegate.switchRootViewController(rootViewController: homeVC, animated: true, completion: nil)
         }
     }
+    
+    func showSystemAlert(title: String, message: String, completion: (() -> ())?) {
+        showAlert(title: title, message: message, then: completion)
+    }
 }
 
 extension PermissionsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -76,6 +80,4 @@ extension PermissionsViewController: UICollectionViewDelegate, UICollectionViewD
         cell.denyFunction = presenter.denyAndContinue
         return cell
     }
-    
-    
 }

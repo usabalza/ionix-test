@@ -9,13 +9,14 @@
 import Foundation
 
 
-// MARK: View Output (Presenter -> View)
+// MARK: - View Output (Presenter -> View)
 protocol PresenterToViewHomeProtocol {
-   func reloadTable()
+    func reloadTable()
+    func showSystemAlert(title: String, message: String, completion: (() -> ())?)
 }
 
 
-// MARK: View Input (View -> Presenter)
+// MARK: - View Input (View -> Presenter)
 protocol ViewToPresenterHomeProtocol {
     
     var view: PresenterToViewHomeProtocol? { get set }
@@ -30,7 +31,7 @@ protocol ViewToPresenterHomeProtocol {
 }
 
 
-// MARK: Interactor Input (Presenter -> Interactor)
+// MARK: - Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorHomeProtocol {
     
     var presenter: InteractorToPresenterHomeProtocol? { get set }
@@ -39,14 +40,14 @@ protocol PresenterToInteractorHomeProtocol {
 }
 
 
-// MARK: Interactor Output (Interactor -> Presenter)
+// MARK: - Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterHomeProtocol {
     func fetchMemeArray(model: BaseData)
     func showAlert(error: String)
 }
 
 
-// MARK: Router Input (Presenter -> Router)
+// MARK: - Router Input (Presenter -> Router)
 protocol PresenterToRouterHomeProtocol {
     
 }

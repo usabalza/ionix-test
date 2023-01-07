@@ -43,6 +43,7 @@
 		8C86D4332968AEB100121DB0 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D4322968AEB100121DB0 /* UIView+extension.swift */; };
 		8C86D4392968EBC200121DB0 /* LoaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D4372968EBC200121DB0 /* LoaderTableViewCell.swift */; };
 		8C86D43A2968EBC200121DB0 /* LoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D4382968EBC200121DB0 /* LoaderTableViewCell.xib */; };
+		8C86D43C296A099F00121DB0 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D43B296A099F00121DB0 /* UIViewController+extension.swift */; };
 		A953508163DA97FB8CA9BD60 /* Pods_IonixTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2222A1C0229A9DB4028E167 /* Pods_IonixTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		8C86D4322968AEB100121DB0 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		8C86D4372968EBC200121DB0 /* LoaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTableViewCell.swift; sourceTree = "<group>"; };
 		8C86D4382968EBC200121DB0 /* LoaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderTableViewCell.xib; sourceTree = "<group>"; };
+		8C86D43B296A099F00121DB0 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		B2222A1C0229A9DB4028E167 /* Pods_IonixTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IonixTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A381D28EE4B38240B89861 /* Pods_IonixTest_IonixTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IonixTest_IonixTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC8F9D572DDF6996910EFB9 /* Pods-IonixTest-IonixTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IonixTest-IonixTestUITests.release.xcconfig"; path = "Target Support Files/Pods-IonixTest-IonixTestUITests/Pods-IonixTest-IonixTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				8C86D3F229673C6300121DB0 /* UIButton+extension.swift */,
 				8C86D4322968AEB100121DB0 /* UIView+extension.swift */,
+				8C86D43B296A099F00121DB0 /* UIViewController+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				8C86D3F729673EFE00121DB0 /* PermissionCollectionViewCell.swift in Sources */,
 				8C86D4132967AC0200121DB0 /* HomeViewController.swift in Sources */,
 				8C86D3B429672A9800121DB0 /* AppDelegate.swift in Sources */,
+				8C86D43C296A099F00121DB0 /* UIViewController+extension.swift in Sources */,
 				8C86D43129687D9400121DB0 /* Endpoints.swift in Sources */,
 				8C86D40629676EBA00121DB0 /* PermissionsViewController.swift in Sources */,
 				8C86D40529676EBA00121DB0 /* PermissionsRouter.swift in Sources */,

@@ -10,6 +10,6 @@ import Foundation
 
 class PermissionsInteractor: PresenterToInteractorPermissionsProtocol {
 
-    // MARK: Properties
+    // MARK: - Properties
     var presenter: InteractorToPresenterPermissionsProtocol?
 }

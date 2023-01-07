@@ -47,6 +47,8 @@ class HomeViewController: UIViewController {
         homeTableView.addSubview(refreshControl)
     }
     
+    // MARK: - ObjectiveC Functions
+    
     @objc func refresh(_ sender: AnyObject) {
        // Code to refresh table view
         guard let presenter = presenter else { return }
@@ -54,6 +56,7 @@ class HomeViewController: UIViewController {
     }
                                   
     @objc func textFieldDidChange(_ textField: UITextField) {
+        // This function calls the search endpoint each time the text changes.
         guard let presenter = presenter else { return }
         presenter.searchText(text: textField.text ?? "")
     }
@@ -61,7 +64,6 @@ class HomeViewController: UIViewController {
     @objc func goToConfig() {
         let vc = PermissionsRouter.createModule(isPushed: true)
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
 
     // MARK: - Properties
@@ -74,6 +76,10 @@ extension HomeViewController: PresenterToViewHomeProtocol{
     func reloadTable() {
         homeTableView.reloadData()
         refreshControl.endRefreshing()
+    }
+    
+    func showSystemAlert(title: String, message: String, completion: (() -> ())?) {
+        showAlert(title: title, message: message, then: completion)
     }
 }
 

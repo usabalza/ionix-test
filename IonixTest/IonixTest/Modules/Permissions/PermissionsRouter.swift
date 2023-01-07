@@ -11,7 +11,7 @@ import UIKit
 
 class PermissionsRouter: PresenterToRouterPermissionsProtocol {
     
-    // MARK: Static methods
+    // MARK: - Static methods
     static func createModule(isPushed: Bool) -> UIViewController {
         
         let viewController = PermissionsViewController()

@@ -11,7 +11,7 @@ import UIKit
 
 class HomeRouter: PresenterToRouterHomeProtocol {
     
-    // MARK: Static methods
+    // MARK: - Static methods
     static func createModule() -> UIViewController {
         
         let viewController = HomeViewController()

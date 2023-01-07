@@ -10,7 +10,7 @@ import Foundation
 
 class HomeInteractor: PresenterToInteractorHomeProtocol {
 
-    // MARK: Properties
+    // MARK: - Properties
     var presenter: InteractorToPresenterHomeProtocol?
     var service = APIRequest()
     

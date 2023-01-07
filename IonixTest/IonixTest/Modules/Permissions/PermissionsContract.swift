@@ -9,14 +9,15 @@
 import Foundation
 
 
-// MARK: View Output (Presenter -> View)
+// MARK: - View Output (Presenter -> View)
 protocol PresenterToViewPermissionsProtocol {
     func scrollForward()
     func goToHome()
+    func showSystemAlert(title: String, message: String, completion: (() -> ())?)
 }
 
 
-// MARK: View Input (View -> Presenter)
+// MARK: - View Input (View -> Presenter)
 protocol ViewToPresenterPermissionsProtocol {
     
     var view: PresenterToViewPermissionsProtocol? { get set }
@@ -30,20 +31,20 @@ protocol ViewToPresenterPermissionsProtocol {
 }
 
 
-// MARK: Interactor Input (Presenter -> Interactor)
+// MARK: - Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorPermissionsProtocol {
     
     var presenter: InteractorToPresenterPermissionsProtocol? { get set }
 }
 
 
-// MARK: Interactor Output (Interactor -> Presenter)
+// MARK: - Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterPermissionsProtocol {
     
 }
 
 
-// MARK: Router Input (Presenter -> Router)
+// MARK: - Router Input (Presenter -> Router)
 protocol PresenterToRouterPermissionsProtocol {
     
 }

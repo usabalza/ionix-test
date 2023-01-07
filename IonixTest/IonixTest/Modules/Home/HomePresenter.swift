@@ -68,7 +68,7 @@ extension HomePresenter: InteractorToPresenterHomeProtocol {
     }
     
     func showAlert(error: String) {
-        print(error)
+        view?.showSystemAlert(title: "Error", message: error, completion: nil)
     }
     
 }

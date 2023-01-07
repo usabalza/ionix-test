@@ -19,7 +19,7 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
         Permission(name: "Enable location services", description: "We wants to access your location only to provide a better experience by helping you find new friends nearby.", image: "location", allowTitle: "Enable", denyTitle: "Cancel"),
     ]
     
-    // MARK: Properties
+    // MARK: - Properties
     var view: PresenterToViewPermissionsProtocol?
     var interactor: PresenterToInteractorPermissionsProtocol?
     var router: PresenterToRouterPermissionsProtocol?
@@ -53,6 +53,7 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
     }
     
     func cameraPermission() {
+        // Method for request permission to camera.
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized: // The user has previously granted access to the camera.
             view?.scrollForward()
@@ -71,6 +72,7 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
     }
     
     func notificationPermission() {
+        // Method to request permission to send notifications to the user.
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
@@ -84,15 +86,15 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
     }
     
     func locationPermission() {
+        // Method to request the use of current location.
         let locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization()
         let status = locationManager.authorizationStatus
         switch status {
-        case .authorizedWhenInUse, .authorizedAlways:
-            // If the user granted authorization.
-            view?.goToHome()
+        case .restricted, .denied, .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
         default: break
         }
+        view?.goToHome()
     }
 }
 
