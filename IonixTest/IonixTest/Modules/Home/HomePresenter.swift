@@ -16,9 +16,16 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     var view: PresenterToViewHomeProtocol?
     var interactor: PresenterToInteractorHomeProtocol?
     var router: PresenterToRouterHomeProtocol?
+    var paginationAfter: String?
     
     func loadData() {
-        interactor?.getMemeIn()
+        memeArray = []
+        paginationAfter = nil
+        interactor?.getMemeIn(after: nil)
+    }
+    
+    func loadMoreData() {
+        interactor?.getMemeIn(after: paginationAfter)
     }
     
     func getMemeCount() -> Int {
@@ -31,8 +38,9 @@ class HomePresenter: ViewToPresenterHomeProtocol {
 }
 
 extension HomePresenter: InteractorToPresenterHomeProtocol {
-    func fetchMemeArray(model: [BaseMeme]) {
-        memeArray = model.filter { $0.data.linkFlairText == "Shitposting" && $0.data.postHint == "image"}
+    func fetchMemeArray(model: BaseData) {
+        memeArray.append(contentsOf: model.data.children.filter { $0.data.linkFlairText == "Shitposting" && $0.data.postHint == "image" })
+        paginationAfter = model.data.after
         view?.reloadTable()
     }
     

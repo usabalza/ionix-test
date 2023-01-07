@@ -8,5 +8,5 @@
 import Foundation
 
 protocol APIProtocol {
-    func getAllMemes(completion: @escaping(APIResponse<BaseData>) -> Void)
+    func getAllMemes(after: String?, completion: @escaping(APIResponse<BaseData>) -> Void)
 }

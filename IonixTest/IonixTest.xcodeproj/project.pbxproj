@@ -41,6 +41,8 @@
 		8C86D42F29687D8000121DB0 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D42E29687D8000121DB0 /* APIProtocol.swift */; };
 		8C86D43129687D9400121DB0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D43029687D9400121DB0 /* Endpoints.swift */; };
 		8C86D4332968AEB100121DB0 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D4322968AEB100121DB0 /* UIView+extension.swift */; };
+		8C86D4392968EBC200121DB0 /* LoaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D4372968EBC200121DB0 /* LoaderTableViewCell.swift */; };
+		8C86D43A2968EBC200121DB0 /* LoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D4382968EBC200121DB0 /* LoaderTableViewCell.xib */; };
 		A953508163DA97FB8CA9BD60 /* Pods_IonixTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2222A1C0229A9DB4028E167 /* Pods_IonixTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		8C86D42E29687D8000121DB0 /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		8C86D43029687D9400121DB0 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		8C86D4322968AEB100121DB0 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		8C86D4372968EBC200121DB0 /* LoaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTableViewCell.swift; sourceTree = "<group>"; };
+		8C86D4382968EBC200121DB0 /* LoaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderTableViewCell.xib; sourceTree = "<group>"; };
 		B2222A1C0229A9DB4028E167 /* Pods_IonixTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IonixTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A381D28EE4B38240B89861 /* Pods_IonixTest_IonixTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IonixTest_IonixTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC8F9D572DDF6996910EFB9 /* Pods-IonixTest-IonixTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IonixTest-IonixTestUITests.release.xcconfig"; path = "Target Support Files/Pods-IonixTest-IonixTestUITests/Pods-IonixTest-IonixTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 		8C86D3F429673ED700121DB0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8C86D4342968EB9500121DB0 /* Loader */,
 				8C86D4182967B25000121DB0 /* Home */,
 				8C86D4172967B24200121DB0 /* Permission */,
 			);
@@ -293,6 +298,15 @@
 				8C86D43029687D9400121DB0 /* Endpoints.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8C86D4342968EB9500121DB0 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				8C86D4372968EBC200121DB0 /* LoaderTableViewCell.swift */,
+				8C86D4382968EBC200121DB0 /* LoaderTableViewCell.xib */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		AE7FF648A65CCAB0A56A2DD9 /* Pods */ = {
@@ -419,6 +433,7 @@
 			files = (
 				8C86D3C029672A9900121DB0 /* LaunchScreen.storyboard in Resources */,
 				8C86D40929676ED300121DB0 /* PermissionsViewController.xib in Resources */,
+				8C86D43A2968EBC200121DB0 /* LoaderTableViewCell.xib in Resources */,
 				8C86D4162967AC0F00121DB0 /* HomeViewController.xib in Resources */,
 				8C86D3F829673EFE00121DB0 /* PermissionCollectionViewCell.xib in Resources */,
 				8C86D41C2967B26500121DB0 /* HomeTableViewCell.xib in Resources */,
@@ -556,6 +571,7 @@
 				8C86D4102967AC0200121DB0 /* HomeContract.swift in Sources */,
 				8C86D3B829672A9800121DB0 /* ViewController.swift in Sources */,
 				8C86D40429676EBA00121DB0 /* PermissionsPresenter.swift in Sources */,
+				8C86D4392968EBC200121DB0 /* LoaderTableViewCell.swift in Sources */,
 				8C86D4142967AC0200121DB0 /* HomeInteractor.swift in Sources */,
 				8C86D40329676EBA00121DB0 /* PermissionsContract.swift in Sources */,
 				8C86D3F729673EFE00121DB0 /* PermissionCollectionViewCell.swift in Sources */,

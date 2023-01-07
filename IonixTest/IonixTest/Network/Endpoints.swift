@@ -18,14 +18,18 @@ enum HTTPMethods {
 }
 
 enum Endpoints {
-    case getAll
+    case getAll(after: String?)
     
     private var fullPath: String{
         var endpoint: String
         
         switch self{
-        case .getAll:
+        case .getAll(let after):
             endpoint = "new/.json?limit=100"
+            if let after = after {
+                endpoint.append("&after=\(after)")
+            }
+            
         }
         return baseUrl + endpoint
     }

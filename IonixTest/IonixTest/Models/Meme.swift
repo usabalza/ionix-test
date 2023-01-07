@@ -8,7 +8,7 @@
 import Foundation
 
 struct Meme: Codable {
-    var linkFlairText: String
+    var linkFlairText: String?
     var postHint: String?
     var title: String
     var url: String

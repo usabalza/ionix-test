@@ -13,8 +13,8 @@ class APIRequest: APIProtocol {
     private let encoding = JSONEncoding.default
     private let successStatusCodes = 200..<300
     
-    func getAllMemes(completion: @escaping (APIResponse<BaseData>) -> Void) {
-        AF.request(Endpoints.getAll.url, method: .get, encoding: encoding)
+    func getAllMemes(after: String?, completion: @escaping (APIResponse<BaseData>) -> Void) {
+        AF.request(Endpoints.getAll(after: after).url, method: .get, encoding: encoding)
             .validate(statusCode: successStatusCodes)
             .responseDecodable(of: BaseData.self, decoder: JSONDecoder()) { [weak self] response in
                 guard let self = self else { return }

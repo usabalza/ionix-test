@@ -14,12 +14,12 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
     var presenter: InteractorToPresenterHomeProtocol?
     var service = APIRequest()
     
-    func getMemeIn() {
-        service.getAllMemes { [weak self] response in
+    func getMemeIn(after: String?) {
+        service.getAllMemes(after: after) { [weak self] response in
             guard let self = self else { return }
             switch response {
             case .success(let model):
-                self.presenter?.fetchMemeArray(model: model.data.children)
+                self.presenter?.fetchMemeArray(model: model)
             case .failure(let error):
                 self.presenter?.showAlert(error: error.error)
             }
