@@ -11,6 +11,8 @@ import Foundation
 class HomePresenter: ViewToPresenterHomeProtocol {
     
     var memeArray: [BaseMeme] = []
+    var searchArray: [BaseMeme] = []
+    var isSearchEmpty: Bool = true
 
     // MARK: Properties
     var view: PresenterToViewHomeProtocol?
@@ -22,24 +24,45 @@ class HomePresenter: ViewToPresenterHomeProtocol {
         memeArray = []
         paginationAfter = nil
         interactor?.getMemeIn(after: nil)
+        
     }
     
-    func loadMoreData() {
-        interactor?.getMemeIn(after: paginationAfter)
+    func loadMoreData(text: String) {
+        if isSearchEmpty {
+            interactor?.getMemeIn(after: paginationAfter)
+        } else {
+            interactor?.searchText(text: text, after: paginationAfter)
+        }
+        
     }
     
     func getMemeCount() -> Int {
-        return memeArray.count
+        return isSearchEmpty ? memeArray.count : searchArray.count
     }
     
     func getMemeIn(row: Int) -> BaseMeme {
-        return memeArray[row]
+        return isSearchEmpty ? memeArray[row] : searchArray[row]
+    }
+    
+    func searchText(text: String) {
+        paginationAfter = nil
+        isSearchEmpty = text.isEmpty
+        searchArray = []
+        interactor?.searchText(text: text, after: paginationAfter)
     }
 }
 
 extension HomePresenter: InteractorToPresenterHomeProtocol {
     func fetchMemeArray(model: BaseData) {
-        memeArray.append(contentsOf: model.data.children.filter { $0.data.linkFlairText == "Shitposting" && $0.data.postHint == "image" })
+        if isSearchEmpty {
+            memeArray.append(contentsOf: model.data.children.filter {
+                $0.data.linkFlairText == "Shitposting" && $0.data.postHint == "image"
+            })
+        } else {
+            searchArray.append(contentsOf: model.data.children.filter {
+                $0.data.linkFlairText == "Shitposting" && $0.data.postHint == "image"
+            })
+        }
         paginationAfter = model.data.after
         view?.reloadTable()
     }

@@ -19,6 +19,7 @@ enum HTTPMethods {
 
 enum Endpoints {
     case getAll(after: String?)
+    case searchText(text: String, after: String?)
     
     private var fullPath: String{
         var endpoint: String
@@ -29,7 +30,11 @@ enum Endpoints {
             if let after = after {
                 endpoint.append("&after=\(after)")
             }
-            
+        case .searchText(let text, let after):
+            endpoint = "search.json?q=\(text)&limit=100"
+            if let after = after {
+                endpoint.append("&after=\(after)")
+            }
         }
         return baseUrl + endpoint
     }

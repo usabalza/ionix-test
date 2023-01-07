@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="IonixTest" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="ODx-JV-lEq" id="TVo-tg-1Au"/>
                 <outlet property="homeTableView" destination="nte-J0-cS5" id="Ci6-ow-DyD"/>
                 <outlet property="searchTextField" destination="y3K-2y-FWP" id="STC-16-bNC"/>
                 <outlet property="view" destination="iN0-l3-epB" id="oeu-Og-KPN"/>
@@ -29,15 +30,55 @@
                     <rect key="frame" x="0.0" y="82" width="375" height="585"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-JV-lEq">
+                    <rect key="frame" x="0.0" y="82" width="375" height="585"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noResults" translatesAutoresizingMaskIntoConstraints="NO" id="gua-VL-dol">
+                            <rect key="frame" x="10" y="73" width="355" height="146.5"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQf-T2-Af0">
+                            <rect key="frame" x="24" y="243.5" width="327" height="27"/>
+                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, there are no results for this search. Please try another phrase." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMT-Fp-9du">
+                            <rect key="frame" x="24" y="282.5" width="327" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="suX-Dl-4Hp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="lQf-T2-Af0" firstAttribute="top" secondItem="gua-VL-dol" secondAttribute="bottom" constant="24" id="5dh-K7-w0u"/>
+                        <constraint firstItem="gua-VL-dol" firstAttribute="centerX" secondItem="ODx-JV-lEq" secondAttribute="centerX" id="ICL-iU-PIl"/>
+                        <constraint firstItem="EMT-Fp-9du" firstAttribute="leading" secondItem="ODx-JV-lEq" secondAttribute="leading" constant="24" id="IuA-Ef-W1b"/>
+                        <constraint firstAttribute="trailing" secondItem="lQf-T2-Af0" secondAttribute="trailing" constant="24" id="Tre-nh-d7N"/>
+                        <constraint firstItem="gua-VL-dol" firstAttribute="centerY" secondItem="ODx-JV-lEq" secondAttribute="centerY" multiplier="0.5" id="Zi9-dF-NkF"/>
+                        <constraint firstItem="lQf-T2-Af0" firstAttribute="leading" secondItem="ODx-JV-lEq" secondAttribute="leading" constant="24" id="g5K-kn-ugK"/>
+                        <constraint firstItem="gua-VL-dol" firstAttribute="height" secondItem="ODx-JV-lEq" secondAttribute="height" multiplier="0.25" id="n7d-cB-fun"/>
+                        <constraint firstAttribute="trailing" secondItem="EMT-Fp-9du" secondAttribute="trailing" constant="24" id="sHX-75-FXa"/>
+                        <constraint firstItem="EMT-Fp-9du" firstAttribute="top" secondItem="lQf-T2-Af0" secondAttribute="bottom" constant="12" id="wAe-xl-a74"/>
+                        <constraint firstItem="EMT-Fp-9du" firstAttribute="centerX" secondItem="ODx-JV-lEq" secondAttribute="centerX" id="x2M-F4-0NA"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="ODx-JV-lEq" firstAttribute="trailing" secondItem="nte-J0-cS5" secondAttribute="trailing" id="BIk-3d-7V3"/>
+                <constraint firstItem="ODx-JV-lEq" firstAttribute="bottom" secondItem="nte-J0-cS5" secondAttribute="bottom" id="EFs-Gm-jBy"/>
                 <constraint firstItem="y3K-2y-FWP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="FDO-Ie-VL5"/>
                 <constraint firstItem="nte-J0-cS5" firstAttribute="top" secondItem="y3K-2y-FWP" secondAttribute="bottom" constant="24" id="Qor-f8-sb7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nte-J0-cS5" secondAttribute="bottom" id="X5G-jt-N6B"/>
+                <constraint firstItem="ODx-JV-lEq" firstAttribute="leading" secondItem="nte-J0-cS5" secondAttribute="leading" id="cwh-YG-aa6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nte-J0-cS5" secondAttribute="trailing" id="fQ3-Tj-ebn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="y3K-2y-FWP" secondAttribute="trailing" constant="24" id="ogZ-tr-m9O"/>
+                <constraint firstItem="ODx-JV-lEq" firstAttribute="top" secondItem="nte-J0-cS5" secondAttribute="top" id="p91-6G-6Wh"/>
                 <constraint firstItem="nte-J0-cS5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pFl-pz-Hsi"/>
                 <constraint firstItem="y3K-2y-FWP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="rKw-SQ-26R"/>
             </constraints>
@@ -45,6 +86,7 @@
         </view>
     </objects>
     <resources>
+        <image name="noResults" width="355" height="290"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

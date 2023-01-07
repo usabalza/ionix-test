@@ -9,4 +9,5 @@ import Foundation
 
 protocol APIProtocol {
     func getAllMemes(after: String?, completion: @escaping(APIResponse<BaseData>) -> Void)
+    func searchText(text: String, after: String?, completion: @escaping(APIResponse<BaseData>) -> Void)
 }

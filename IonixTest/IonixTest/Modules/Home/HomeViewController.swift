@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var emptyView: UIView!
+    
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet weak var homeTableView: UITableView!
@@ -22,6 +24,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTableView()
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         guard let presenter = presenter else { return }
         presenter.loadData()
     }
@@ -45,6 +48,11 @@ class HomeViewController: UIViewController {
         guard let presenter = presenter else { return }
         presenter.loadData()
     }
+                                  
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let presenter = presenter else { return }
+        presenter.searchText(text: textField.text ?? "")
+    }
 
     // MARK: - Properties
     var presenter: ViewToPresenterHomeProtocol?
@@ -67,7 +75,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let presenter = presenter else { return 0 }
         switch section {
-        case 0: return presenter.getMemeCount()
+        case 0:
+            emptyView.isHidden = presenter.getMemeCount() > 0
+            return presenter.getMemeCount()
         case 1: return 1
         default: return 0
         }
@@ -100,8 +110,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let presenter = presenter else { return }
         if indexPath.row == presenter.getMemeCount() - 1, !isLoading {
-            presenter.loadMoreData()
+            presenter.loadMoreData(text: searchTextField.text ?? "")
         }
     }
-    
 }

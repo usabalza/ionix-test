@@ -23,9 +23,10 @@ protocol ViewToPresenterHomeProtocol {
     var router: PresenterToRouterHomeProtocol? { get set }
     
     func loadData()
-    func loadMoreData()
+    func loadMoreData(text: String)
     func getMemeCount() -> Int
     func getMemeIn(row: Int) -> BaseMeme
+    func searchText(text: String)
 }
 
 
@@ -34,6 +35,7 @@ protocol PresenterToInteractorHomeProtocol {
     
     var presenter: InteractorToPresenterHomeProtocol? { get set }
     func getMemeIn(after: String?)
+    func searchText(text: String, after: String?)
 }
 
 
