@@ -25,7 +25,4 @@ class NetworkManager {
     private let timeoutInterval = 30.0
     private let decoder = JSONDecoder()
     private let encoding = JSONEncoding.default
-    
-    func request<T: Codable>(endpoint: String, method: HTTPMethod, completion: @escaping (APIResponse<T>) -> Void) {
-    }
 }

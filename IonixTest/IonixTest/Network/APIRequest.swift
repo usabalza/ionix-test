@@ -49,10 +49,6 @@ class APIRequest: APIProtocol {
         print("\n----------------------API RESPONSE----------------------\n")
         print("\nRequest URL: \n\n" + String(describing: response.request?.url?.absoluteString))
         
-//        if let data = response.request?.httpBody {
-//            print("\nRequest Body: \n\n" + String(data: data, encoding: String.Encoding.utf8)!)
-//        }
-        
         if let data = response.data {
             print("\nResponse Body: \n\n" + String(data: data, encoding: String.Encoding.utf8)!)
         }
