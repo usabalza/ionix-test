@@ -63,9 +63,9 @@ extension HomePresenter: InteractorToPresenterHomeProtocol {
                 $0.data.linkFlairText == "Shitposting" && $0.data.postHint == "image"
             })
         } else {
-            searchArray = model.data.children.filter {
+            searchArray.append(contentsOf: model.data.children.filter {
                 $0.data.linkFlairText == "Shitposting" && $0.data.postHint == "image"
-            }
+            })
         }
         paginationAfter = model.data.after
         view?.reloadTable()
