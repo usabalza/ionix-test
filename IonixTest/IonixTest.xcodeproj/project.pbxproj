@@ -337,6 +337,7 @@
 				8C86D3AD29672A9800121DB0 /* Frameworks */,
 				8C86D3AE29672A9800121DB0 /* Resources */,
 				085888F30F29164BE173A886 /* [CP] Embed Pods Frameworks */,
+				8C86D43D296B3F5E00121DB0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -516,6 +517,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IonixTest-IonixTestUITests/Pods-IonixTest-IonixTestUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8C86D43D296B3F5E00121DB0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		C1D083CB130C82D8A1B4618A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

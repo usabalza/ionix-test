@@ -8,11 +8,11 @@
 import UIKit
 
 class LoaderTableViewCell: UITableViewCell {
-    
+
     static let identifier = "LoaderTableViewCell"
-    
+
     @IBOutlet weak var loader: UIActivityIndicatorView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,13 +23,12 @@ class LoaderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func startAnimating() {
         loader.startAnimating()
     }
-    
+
     func stopAnimating() {
         loader.stopAnimating()
     }
-    
 }

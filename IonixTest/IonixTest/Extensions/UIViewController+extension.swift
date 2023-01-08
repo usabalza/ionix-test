@@ -7,17 +7,25 @@
 
 import UIKit
 
+struct Alert {
+    var title: String?
+    var message: String?
+    var style: UIAlertController.Style = .alert
+    var buttons: [(title: String, style: UIAlertAction.Style, action: (() -> Void)?)] = []
+    var then: (() -> Void)?
+}
+
 extension UIViewController {
-    func showAlert(title: String?, message: String?,style: UIAlertController.Style = .alert, buttons: [(title:String,style: UIAlertAction.Style,action:(()->())?)] = [],then: (()->())?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        if buttons.isEmpty{
-            alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { (action) in
-                then?()
+    func showAlert(alertModel: Alert) {
+        let alert = UIAlertController(title: alertModel.title, message: alertModel.message, preferredStyle: alertModel.style)
+        if alertModel.buttons.isEmpty {
+            alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { _ in
+                alertModel.then?()
             }))
-        }else{
-            for b in buttons{
-                alert.addAction(UIAlertAction.init(title: b.title, style: b.style, handler: { (action) in
-                    b.action?()
+        } else {
+            for button in alertModel.buttons {
+                alert.addAction(UIAlertAction.init(title: button.title, style: button.style, handler: { (action) in
+                    button.action?()
                 }))
             }
         }

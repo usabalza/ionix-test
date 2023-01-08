@@ -9,7 +9,7 @@
 import Foundation
 
 class HomePresenter: ViewToPresenterHomeProtocol {
-    
+
     var memeArray: [BaseMeme] = []
     var searchArray: [BaseMeme] = []
     var isSearchEmpty: Bool = true
@@ -19,31 +19,30 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     var interactor: PresenterToInteractorHomeProtocol?
     var router: PresenterToRouterHomeProtocol?
     var paginationAfter: String?
-    
+
     func loadData() {
         memeArray = []
         paginationAfter = nil
         interactor?.getMemeIn(after: nil)
-        
     }
-    
+
     func loadMoreData(text: String) {
         if isSearchEmpty {
             interactor?.getMemeIn(after: paginationAfter)
         } else {
             interactor?.searchText(text: text, after: paginationAfter)
         }
-        
+
     }
-    
+
     func getMemeCount() -> Int {
         return isSearchEmpty ? memeArray.count : searchArray.count
     }
-    
+
     func getMemeIn(row: Int) -> BaseMeme {
         return isSearchEmpty ? memeArray[row] : searchArray[row]
     }
-    
+
     func searchText(text: String) {
         paginationAfter = nil
         isSearchEmpty = text.isEmpty
@@ -66,9 +65,9 @@ extension HomePresenter: InteractorToPresenterHomeProtocol {
         paginationAfter = model.data.after
         view?.reloadTable()
     }
-    
+
     func showAlert(error: String) {
         view?.showSystemAlert(title: "Error", message: error, completion: nil)
     }
-    
+
 }

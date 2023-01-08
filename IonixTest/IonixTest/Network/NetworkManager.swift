@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-enum APIResponse<T:Codable>{
+enum APIResponse<T:Codable> {
     case success(_ model: T)
     case failure(_ error: ResponseError)
 }

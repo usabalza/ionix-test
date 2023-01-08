@@ -14,7 +14,7 @@ struct Meme: Codable {
     var url: String
     var score: Int
     var numComments: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case linkFlairText = "link_flair_text"
         case postHint = "post_hint"
@@ -37,7 +37,7 @@ struct Pagination: Codable {
     var geoFilter: String
     var children: [BaseMeme]
     var before: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case after = "after"
         case dist = "dist"
@@ -52,4 +52,3 @@ struct BaseMeme: Codable {
     var kind: String
     var data: Meme
 }
-

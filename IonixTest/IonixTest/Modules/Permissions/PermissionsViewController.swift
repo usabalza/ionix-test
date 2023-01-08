@@ -10,30 +10,29 @@ import UIKit
 import CoreLocation
 
 class PermissionsViewController: UIViewController {
-    
+
     @IBOutlet weak var permissionsCollection: UICollectionView!
-    
+
     var isPushed: Bool = false
-    
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCollectionView()
     }
-    
+
     func loadCollectionView() {
         permissionsCollection.register(UINib.init(nibName: PermissionCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PermissionCollectionViewCell.identifier)
         permissionsCollection.delegate = self
         permissionsCollection.dataSource = self
     }
-    
+
     // MARK: - Properties
     var presenter: ViewToPresenterPermissionsProtocol?
-    
 }
 
-extension PermissionsViewController: PresenterToViewPermissionsProtocol{
-    // TODO: Implement View Output Methods
+extension PermissionsViewController: PresenterToViewPermissionsProtocol {
+    // MARK: - Implement View Output Methods
     func scrollForward() {
         guard let presenter = presenter else { return }
         DispatchQueue.main.async {
@@ -45,7 +44,7 @@ extension PermissionsViewController: PresenterToViewPermissionsProtocol{
             }
         }
     }
-    
+
     func goToHome() {
         if isPushed {
             navigationController?.popViewController(animated: true)
@@ -55,9 +54,9 @@ extension PermissionsViewController: PresenterToViewPermissionsProtocol{
             sceneDelegate.switchRootViewController(rootViewController: homeVC, animated: true, completion: nil)
         }
     }
-    
-    func showSystemAlert(title: String, message: String, completion: (() -> ())?) {
-        showAlert(title: title, message: message, then: completion)
+
+    func showSystemAlert(title: String, message: String, completion: (() -> Void)?) {
+        showAlert(alertModel: Alert(title: title, message: message, then: completion))
     }
 }
 
@@ -66,11 +65,11 @@ extension PermissionsViewController: UICollectionViewDelegate, UICollectionViewD
         guard let presenter = presenter else { return 0 }
         return presenter.getPermissionCount()
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return permissionsCollection.bounds.size
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let presenter = presenter else { return UICollectionViewCell() }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PermissionCollectionViewCell.identifier, for: indexPath) as! PermissionCollectionViewCell

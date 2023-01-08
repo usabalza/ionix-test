@@ -13,7 +13,7 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
     // MARK: - Properties
     var presenter: InteractorToPresenterHomeProtocol?
     var service = APIRequest()
-    
+
     func getMemeIn(after: String?) {
         service.getAllMemes(after: after) { [weak self] response in
             guard let self = self else { return }
@@ -25,7 +25,7 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
             }
         }
     }
-    
+
     func searchText(text: String, after: String?) {
         service.searchText(text: text, after: after) { [weak self] response in
             guard let self = self else { return }

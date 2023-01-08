@@ -17,5 +17,3 @@ extension UIButton {
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
-
-

@@ -22,10 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = initialVC
         window?.makeKeyAndVisible()
     }
-    
+
     func switchRootViewController(rootViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        let vc = rootViewController
-        window?.rootViewController = vc
+        let viewController = rootViewController
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
 
@@ -56,7 +56,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-

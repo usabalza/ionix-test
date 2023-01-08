@@ -20,11 +20,11 @@ enum HTTPMethods {
 enum Endpoints {
     case getAll(after: String?)
     case searchText(text: String, after: String?)
-    
-    private var fullPath: String{
+
+    private var fullPath: String {
         var endpoint: String
-        
-        switch self{
+
+        switch self {
         case .getAll(let after):
             endpoint = "new/.json?limit=100"
             if let after = after {
@@ -38,7 +38,7 @@ enum Endpoints {
         }
         return baseUrl + endpoint
     }
-    
+
     var url: URL {
         guard let url = URL(string: fullPath) else {
             preconditionFailure("The url used in \(Endpoints.self) is not valid")
