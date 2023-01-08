@@ -31,7 +31,7 @@ struct BaseData: Codable {
 }
 
 struct Pagination: Codable {
-    var after: String
+    var after: String?
     var dist: Int
     var modhash: String
     var geoFilter: String

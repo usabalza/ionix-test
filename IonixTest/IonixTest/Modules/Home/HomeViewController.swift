@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
                                                                 action: #selector(goToConfig))
         loadTableView()
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        searchTextField.delegate = self
         guard let presenter = presenter else { return }
         presenter.loadData()
     }
@@ -134,5 +135,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == presenter.getMemeCount() - 1, !isLoading {
             presenter.loadMoreData(text: searchTextField.text ?? "")
         }
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
+}
+
+extension HomeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view?.endEditing(true)
+        return false
     }
 }

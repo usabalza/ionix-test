@@ -11,7 +11,6 @@
 		7C1E2508936B909635D3B6FD /* Pods_IonixTest_IonixTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A381D28EE4B38240B89861 /* Pods_IonixTest_IonixTestUITests.framework */; };
 		8C86D3B429672A9800121DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3B329672A9800121DB0 /* AppDelegate.swift */; };
 		8C86D3B629672A9800121DB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3B529672A9800121DB0 /* SceneDelegate.swift */; };
-		8C86D3B829672A9800121DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3B729672A9800121DB0 /* ViewController.swift */; };
 		8C86D3BD29672A9900121DB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D3BC29672A9900121DB0 /* Assets.xcassets */; };
 		8C86D3C029672A9900121DB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C86D3BE29672A9900121DB0 /* LaunchScreen.storyboard */; };
 		8C86D3CB29672A9900121DB0 /* IonixTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86D3CA29672A9900121DB0 /* IonixTestTests.swift */; };
@@ -73,7 +72,6 @@
 		8C86D3B029672A9800121DB0 /* IonixTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IonixTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C86D3B329672A9800121DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C86D3B529672A9800121DB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C86D3B729672A9800121DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C86D3BC29672A9900121DB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C86D3BF29672A9900121DB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C86D3C129672A9900121DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				8C86D3E329673B2A00121DB0 /* Modules */,
 				8C86D3B329672A9800121DB0 /* AppDelegate.swift */,
 				8C86D3B529672A9800121DB0 /* SceneDelegate.swift */,
-				8C86D3B729672A9800121DB0 /* ViewController.swift */,
 				8C86D3BC29672A9900121DB0 /* Assets.xcassets */,
 				8C86D3BE29672A9900121DB0 /* LaunchScreen.storyboard */,
 				8C86D3C129672A9900121DB0 /* Info.plist */,
@@ -591,7 +588,6 @@
 				8C86D42F29687D8000121DB0 /* APIProtocol.swift in Sources */,
 				8C86D4332968AEB100121DB0 /* UIView+extension.swift in Sources */,
 				8C86D4102967AC0200121DB0 /* HomeContract.swift in Sources */,
-				8C86D3B829672A9800121DB0 /* ViewController.swift in Sources */,
 				8C86D40429676EBA00121DB0 /* PermissionsPresenter.swift in Sources */,
 				8C86D4392968EBC200121DB0 /* LoaderTableViewCell.swift in Sources */,
 				8C86D4142967AC0200121DB0 /* HomeInteractor.swift in Sources */,
