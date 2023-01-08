@@ -14,6 +14,7 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
     var presenter: InteractorToPresenterHomeProtocol?
     var service = APIRequest()
 
+    // Handles the API call to the "Get all memes" endpoint
     func getMemeIn(after: String?) {
         service.getAllMemes(after: after) { [weak self] response in
             guard let self = self else { return }
@@ -26,6 +27,7 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
         }
     }
 
+    // Handles the API call to the "Search by letter" endpoint
     func searchText(text: String, after: String?) {
         service.searchText(text: text, after: after) { [weak self] response in
             guard let self = self else { return }

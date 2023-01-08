@@ -42,14 +42,17 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
     var interactor: PresenterToInteractorPermissionsProtocol?
     var router: PresenterToRouterPermissionsProtocol?
 
+    // Get count for permission array (to show in collectionView)
     func getPermissionCount() -> Int {
         return permissionsArray.count
     }
 
+    // Get specific model of permission for row
     func getPermissionIn(row: Int) -> Permission {
         return permissionsArray[row]
     }
 
+    // Asks for the permissions depending of visible row: 0 = Camera; 1 = Notifications; 2 = Location
     func askForPermission(row: Int) {
         switch row {
         case 0:
@@ -62,6 +65,7 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
         }
     }
 
+    // This function handles the deny action and redirects to next
     func denyAndContinue(row: Int) {
         if row == 2 {
             view?.goToHome()
@@ -70,8 +74,8 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
         }
     }
 
+    // Method for request permission to camera.
     func cameraPermission() {
-        // Method for request permission to camera.
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized: // The user has previously granted access to the camera.
             view?.scrollForward()
@@ -89,8 +93,8 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
         }
     }
 
+    // Method to request permission to send notifications to the user.
     func notificationPermission() {
-        // Method to request permission to send notifications to the user.
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { _, error in
             if let error = error {
@@ -109,6 +113,7 @@ class PermissionsPresenter: ViewToPresenterPermissionsProtocol {
         let status = locationManager.authorizationStatus
         switch status {
         case .restricted, .denied, .notDetermined:
+            // Actions to take when not authenticated.
             locationManager.requestWhenInUseAuthorization()
         default: break
         }

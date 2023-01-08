@@ -10,9 +10,7 @@ import Alamofire
 
 class APIRequest: APIProtocol {
 
-    private let encoding = JSONEncoding.default
-    private let successStatusCodes = 200..<300
-
+    // Retrieve all memes list from Reddit API
     func getAllMemes(after: String?, completion: @escaping (APIResponse<BaseData>) -> Void) {
         AF.request(Endpoints.getAll(after: after).url, method: .get, encoding: encoding)
             .validate(statusCode: successStatusCodes)
@@ -29,6 +27,7 @@ class APIRequest: APIProtocol {
             }
     }
 
+    // Search specific string onto API
     func searchText(text: String, after: String?, completion: @escaping (APIResponse<BaseData>) -> Void) {
         AF.request(Endpoints.searchText(text: text, after: after).url, method: .get, encoding: encoding)
             .validate(statusCode: successStatusCodes)

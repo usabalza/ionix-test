@@ -7,16 +7,6 @@
 
 import Foundation
 
-let baseUrl = "https://www.reddit.com/r/chile/"
-
-enum HTTPMethods {
-    case get
-    case post
-    case put
-    case delete
-    case patch
-}
-
 enum Endpoints {
     case getAll(after: String?)
     case searchText(text: String, after: String?)

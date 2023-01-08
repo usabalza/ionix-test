@@ -33,6 +33,8 @@ class PermissionsViewController: UIViewController {
 
 extension PermissionsViewController: PresenterToViewPermissionsProtocol {
     // MARK: - Implement View Output Methods
+
+    // Scroll forward on carousel
     func scrollForward() {
         guard let presenter = presenter else { return }
         DispatchQueue.main.async {
@@ -45,6 +47,7 @@ extension PermissionsViewController: PresenterToViewPermissionsProtocol {
         }
     }
 
+    // Change rootViewController to Home
     func goToHome() {
         if isPushed {
             navigationController?.popViewController(animated: true)
@@ -55,6 +58,7 @@ extension PermissionsViewController: PresenterToViewPermissionsProtocol {
         }
     }
 
+    // Shows the native alert
     func showSystemAlert(title: String, message: String, completion: (() -> Void)?) {
         showAlert(alertModel: Alert(title: title, message: message, then: completion))
     }

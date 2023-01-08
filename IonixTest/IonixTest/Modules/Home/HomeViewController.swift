@@ -34,7 +34,8 @@ class HomeViewController: UIViewController {
         presenter.loadData()
     }
 
-    func loadTableView() {
+    // Code to load the current tableView
+    private func loadTableView() {
         homeTableView.register(
             UINib.init(nibName: HomeTableViewCell.identifier, bundle: nil),
             forCellReuseIdentifier: HomeTableViewCell.identifier
@@ -48,7 +49,8 @@ class HomeViewController: UIViewController {
         addPushToRefresh()
     }
 
-    func addPushToRefresh() {
+    // Push to refresh for tableView
+    private func addPushToRefresh() {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         homeTableView.addSubview(refreshControl)
@@ -56,18 +58,19 @@ class HomeViewController: UIViewController {
 
     // MARK: - ObjectiveC Functions
 
+    // Code to refresh table view
     @objc func refresh(_ sender: AnyObject) {
-       // Code to refresh table view
         guard let presenter = presenter else { return }
         presenter.loadData()
     }
 
+    // This function calls the search endpoint each time the text changes.
     @objc func textFieldDidChange(_ textField: UITextField) {
-        // This function calls the search endpoint each time the text changes.
         guard let presenter = presenter else { return }
         presenter.searchText(text: textField.text ?? "")
     }
 
+    // Push to the PermissionsViewController
     @objc func goToConfig() {
         let viewController = PermissionsRouter.createModule(isPushed: true)
         self.navigationController?.pushViewController(viewController, animated: true)
@@ -80,11 +83,14 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: PresenterToViewHomeProtocol {
     // MARK: - Implement View Output Methods
+
+    // Reloads the current table
     func reloadTable() {
         homeTableView.reloadData()
         refreshControl.endRefreshing()
     }
 
+    // Shows the native alert
     func showSystemAlert(title: String, message: String, completion: (() -> Void)?) {
         showAlert(alertModel: Alert(title: title, message: message, then: completion))
     }
