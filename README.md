@@ -18,7 +18,7 @@ This app is a tech testing in order to show the basic capabilities of permission
 ## Used tools
 macOS Ventura 13.0.1
 
-Xcode 14.1
+Swift 5, Xcode 14.1
 
 CocoaPods 1.11.3
 
